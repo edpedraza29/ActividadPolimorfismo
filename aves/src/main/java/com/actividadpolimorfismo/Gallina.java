@@ -1,12 +1,15 @@
 package com.actividadpolimorfismo;
 
-public class Gallina extends Ave implements Volar{
-    @Override
-    public void makeSound(){
-        System.out.println("Grasna");
-    }
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-    public void vuela(){
-        System.out.println("vuela con alas");
+public class Gallina extends Ave {
+    public static final Logger logger = LoggerFactory.getLogger(Gallina.class);
+
+    public Gallina(){
+        logger.debug("instanciando una Gallina");
+        tipoSonido = new Grasnido();
+        tipoVuelo = new VueloConAlas();
     }
+    
 }

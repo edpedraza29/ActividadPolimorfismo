@@ -1,12 +1,15 @@
 package com.actividadpolimorfismo;
 
-public class Canario extends Ave implements Volar{
-    @Override
-    public void makeSound(){
-        System.out.println("Canario");
-    }
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-    public void vuela(){
-        System.out.println("vuela con alas");
+public class Canario extends Ave {
+    public static final Logger logger = LoggerFactory.getLogger(Canario.class);
+
+    public Canario(){
+        logger.debug("instanciando un canario");
+        tipoSonido = new Canto();
+        tipoVuelo = new VueloConAlas();
     }
+    
 }
