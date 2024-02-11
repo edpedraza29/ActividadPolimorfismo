@@ -1,11 +1,11 @@
 package com.actividadpolimorfismo;
 
-public class Canario extends Ave{
+public class Canario extends Ave implements Volar{
     @Override
     public void makeSound(){
         System.out.println("Canario");
     }
-    @Override
+
     public void vuela(){
         System.out.println("vuela con alas");
     }
